@@ -1,0 +1,10 @@
+
+ListenPort = 3334
+
+[Mysql]
+Host = "localhost"
+User = "root"
+Password = "lvmingyinMysql"
+DB = "measure"
+Port = 3306
+

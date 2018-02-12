@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
+    <link rel="stylesheet" type="text/css" href="/static/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css" />
+    <title>数据测量</title>
+</head>
+<body>
+
+<div class="page">
+    <div class="container">
+        <div class="header">
+            测量明细
+            <span class="save">保存</span>
+        </div>
+        <div class="content">
+            <form>
+                <div class="section">
+                    <div class="title">基本信息：</div>
+                    <div class="rows">
+                        <div class="row">
+                            <span class="name">机型：</span>
+                            <input placeholder="" name="name" type="text" class="form-control-inline" />
+                        </div>
+                        <div class="row">
+                            <span class="name">机型所属公司：</span>
+                            <input placeholder="" name="company" type="text" class="form-control-inline" />
+                        </div>
+                        <div class="row">
+                            <span class="name">公司地址(收货地址)：</span>
+                            <input placeholder="" name="address" type="text" class="form-control-inline" />
+                        </div>
+                        <div class="row">
+                            <span class="name">联系人以及联系电话：</span>
+                            <input placeholder="" name="phone" type="text" class="form-control-inline" />
+                            &emsp;
+                            <span class="form-radio">
+                            <input checked type="radio" value="技术主管" name="phoneType" id="itManager" title="技术主管" />
+                            <label for="itManager">技术主管</label>
+                        </span>
+                            <span class="form-radio">
+                            <input type="radio" value="采购主管" name="phoneType" id="cgManager" title="采购主管" />
+                            <label for="cgManager">采购主管</label>
+                        </span>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="title">基本参数：</div>
+                    <div class="rows">
+                        <div class="row">
+                            <span class="name">机床结构：</span>
+                            <span class="form-radio">
+                            <input type="radio" value="三硬轨" name="machineStruct" id="ms1" title="三硬轨" checked />
+                            <label for="ms1">三硬轨</label>
+                        </span>
+                            <span class="form-radio">
+                            <input type="radio" value="三线轨" name="machineStruct" id="ms2" title="三线轨" />
+                            <label for="ms2">三线轨</label>
+                        </span>
+                            <span class="form-radio">
+                            <input type="radio" value="两线一硬" name="machineStruct" id="ms3" title="两线一硬" />
+                            <label for="ms3">两线一硬</label>
+                        </span>
+                        </div>
+                        <div class="row">
+                            <span class="name">设计使用速度：</span>
+                            <span class="form-radio">
+                            <input type="radio" value="25M/min以内" name="designUseSpeed" id="ds1" title="25M/min以内"
+                                   checked />
+                            <label for="ds1">25M/min以内</label>
+                        </span>
+                            <span class="form-radio">
+                            <input type="radio" value="35M/min以内" name="designUseSpeed" id="ds2" title="35M/min以内" />
+                            <label for="ds2">35M/min以内</label>
+                        </span>
+                            <span class="form-radio">
+                            <input type="radio" value="48M/min以内" name="designUseSpeed" id="ds3" title="48M/min以内" />
+                            <label for="ds3">48M/min以内</label>
+                        </span>
+                            <span class="form-radio">
+                            <input type="radio" value="64M/min以内" name="designUseSpeed" id="ds4" title="64M/min以内" />
+                            <label for="ds4">64M/min以内</label>
+                        </span>
+                        </div>
+                        <div class="row">
+                            <span class="name">工作行程：&emsp;&emsp;</span>
+                            <span class="name">X轴</span>
+                            <input placeholder="" name="workTripX" type="text" class="form-control-inline" /><br />
+                            <span class="name">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Y轴</span>
+                            <input placeholder="" name="workTripY" type="text" class="form-control-inline" /><br />
+                            <span class="name">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Z轴</span>
+                            <input placeholder="" name="workTripZ" type="text" class="form-control-inline" />
+                        </div>
+                        <div class="row">
+                            <span class="name">护罩支架长度：</span>
+                            <span class="name">X轴</span>&nbsp;<input placeholder="" name="shieldBracketLengthX" type="text"
+                                           class="form-control-inline" /><br />
+                            <span class="name">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Y轴</span>
+                            <input placeholder="" name="shieldBracketLengthY" type="text" class="form-control-inline" /><br />
+                            <span class="name">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Z轴</span>
+                            <input placeholder="" name="shieldBracketLengthZ" type="text" class="form-control-inline" /><br />
+                            <span class="name">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Y后</span>
+                            <input placeholder="" name="shieldBracketLengthYH" type="text"
+                                   class="form-control-inline" />
+                            <span>(注：Y后为滑鞍与立柱最小距离）</span>
+                        </div>
+                        <div class="row">
+                            <span class="name">护罩结构要求：</span>
+                            <span class="form-radio">
+                            <input type="radio" value="无要求" name="shieldStruct" id="bs1" title="无要求" checked />
+                            <label for="bs1">无要求</label>
+                        </span>
+                            <span class="form-radio">
+                            <input type="radio" value="要求如下" name="shieldStruct" id="bs2" title="要求如下" />
+                            <label for="bs2">要求如下</label>
+                        </span>
+                            <input placeholder="" type="text" name="shieldStructText" class="form-control-inline" />
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="title">X向测量：</div>
+                    <div class="rows">
+                        <div class="row">
+                            <div class="lead">1.工作台</div>
+                        </div>
+                        <div class="row">
+                            <span class="name">工作台宽度：</span>
+                            <input placeholder="" name="workBenchWidth" type="text" class="form-control-inline" />
+                        </div>
+                        <div class="row">
+                            <span class="name">工作台长度：</span>
+                            <input placeholder="" name="workBenchLength" type="text" class="form-control-inline" />
+                        </div>
+                        <div class="row">
+                            <span class="name">轨道面到工作台底端高度：</span>
+                            <input placeholder="" name="trackSurfaceToBenchBottomHeight" type="text"
+                                   class="form-control-inline" />
+                        </div>
+                        <div class="row">
+                            <span class="name">轨道面到工作台第二台阶高度：</span>
+                            <input placeholder="" name="trackSurfaceToBenchTwoHeight" type="text"
+                                   class="form-control-inline" />
+                        </div>
+                        <div class="row">
+                            <span class="name">轨道面到工作台顶面高度：</span>
+                            <input placeholder="" name="trackSurfaceBenchTopHeight" type="text"
+                                   class="form-control-inline" />
+                        </div>
+                        <div class="row">
+                            <span class="name">工作台中分距离：</span>
+                            前：<input placeholder="" name="workBenchMiddleDistanceBefore" type="text"
+                                     class="form-control-inline" />
+                            &emsp;&emsp;
+                            <span class="name">后：</span><input placeholder="" name="workBenchMiddleDistanceAfter" type="text"
+                                                 class="form-control-inline" />
+                            (注以滑鞍中线为基准）
+                        </div>
+                        <div class="row">
+                            <span class="name">工作台凸出滑鞍距离：</span>
+                            <input placeholder="" name="workBenchProtrudingSaddleDistance" type="text"
+                                   class="form-control-inline" />
+                        </div>
+                        <div class="row">
+                            <div class="lead">2.轨道宽度</div>
+                        </div>
+                        <div class="row">
+                            <span class="name">内轨宽：</span>
+                            <input placeholder="" name="xInTrackWidth" type="text" class="form-control-inline" />
+                        </div>
+                        <div class="row">
+                            <span class="name">外轨宽：</span>
+                            <input placeholder="" name="xOutTrackWidth" type="text" class="form-control-inline" />
+                        </div>
+
+                        <div class="row">
+                            <div class="lead">3.干涉区域</div>
+                        </div>
+                        <div class="row">
+                            <div class="lead">1）外置拖链槽干涉</div>
+                        </div>
+                        <div class="row">
+                            <span class="name">轨道外侧到拖链槽外边的距离：</span>
+                            <input placeholder="" name="trackOutToTowlineSlotOutDistance" type="text"
+                                   class="form-control-inline" />
+                        </div>
+                        <div class="row">
+                            <span class="name">拖链槽定边高出线轨面的高度：</span>
+                            <input placeholder="" name="towlineHightLineTrackSurfaceHeight" type="text"
+                                   class="form-control-inline" />
+                            （注：若是低于线轨面用负数表示）
+                        </div>
+                        <div class="row">
+                            <span class="name">轨道外侧到拖链槽内边的距离：</span>
+                            <input placeholder="" name="trackOutToTowlineSlotInDistance" type="text"
+                                   class="form-control-inline" />
+                        </div>
+                        <div class="row">
+                            <div class="lead">2）电机座干涉</div>
+                        </div>
+                        <div class="row">
+                            <span class="name">线轨面到电机座顶边的高度：</span>
+                            <input placeholder="" name="xLineTrackSurfaceToMotorTopHeight" type="text"
+                                   class="form-control-inline" />
+                        </div>
+                        <div class="row">
+                            <span class="name">电机座宽度：</span>
+                            <input placeholder="" name="xMotorWidth" type="text" class="form-control-inline" />
+                        </div>
+                        <div class="row">
+                            <div class="lead">4.线轨的测量</div>
+                        </div>
+                        <div class="row">
+                            <span class="name">线轨的宽度：</span>
+                            <input placeholder="" name="xLineTrackWidth" type="text" class="form-control-inline" />
+                        </div>
+                        <div class="row">
+                            <span class="name">线轨的高度：</span>
+                            <input placeholder="" name="xLineTrackHeight" type="text" class="form-control-inline" />
+                        </div>
+                        <div class="row">
+                            <span class="name">线轨外侧到铸件边的距离：</span>
+                            <input placeholder="" name="xLineTrackOutToCastingDistance" type="text"
+                                   class="form-control-inline" />
+                        </div>
+                        <div class="row">
+                            <span class="name">线轨内侧到铸件边的距离：</span>
+                            <input placeholder="" name="xLineTrackInToCastingDistance" type="text"
+                                   class="form-control-inline" />
+                        </div>
+                        <div class="row">
+                            <span class="name">线轨内侧到电机座侧边的距离：</span>
+                            <input placeholder="" name="xLineTrackInToMotorSideDistance" type="text"
+                                   class="form-control-inline" />
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="title">Y向测量：</div>
+                        <div class="rows">
+                            <div class="row">
+                                <span class="lead">1.滑鞍固定面</span>
+                            </div>
+                            <div class="row">
+                                <span class="name">有效固定面的宽度：</span>
+                                <input placeholder="" name="yValidFixedSurfaceWidth" type="text"
+                                       class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="name">有效固定面的高度：</span>
+                                <input placeholder="" name="yValidFixedSurfaceHeight" type="text"
+                                       class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="name">轨道面到滑鞍固定面底端的高度：</span>
+                                <input placeholder="" name="trackSurfaceToSaddleFixedSurfaceBottomHeight" type="text"
+                                       class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="name">轨道面到滑鞍固定面顶端的高度：</span>
+                                <input placeholder="" name="trackSurfaceToSaddleFixedSurfaceTopHeight" type="text"
+                                       class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="lead">2.轨道宽度</span>
+                            </div>
+                            <div class="row">
+                                <span class="name">内轨宽：</span>
+                                <input placeholder="" name="yInTrackWidth" type="text" class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="name">外轨宽：</span>
+                                <input placeholder="" name="yOutTrackWidth" type="text" class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="lead">3.干涉区域</span>
+                            </div>
+                            <div class="row">
+                                <span class="lead">1）镶条干涉区域</span>
+                            </div>
+                            <div class="row">
+                                <span class="name">镶条侧向凸出距离：</span>
+                                <input placeholder="" name="insertsSideProtrudingDistance" type="text"
+                                       class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="name">镶条伸出滑鞍距离：</span>
+                                <input placeholder="" name="insertsStretchSaddleDistance" type="text"
+                                       class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="name">油嘴凸出滑鞍距离：</span>
+                                <input placeholder="" name="nozzleProtrudingSaddleDistance" type="text"
+                                       class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="name">油嘴高出轨道面的距离：</span>
+                                <input placeholder="" name="nozzleHightTrackSurfaceDistance" type="text"
+                                       class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="lead"> 2）电机座干涉：</span>
+                            </div>
+                            <div class="row">
+                                <span class="name">电机放置：</span>
+                                <span class="form-radio">
+                                <input type="radio" name="yMotorPlace" id="y321-1" title="" value="前置电机" checked />
+                                <label for="y321-1">前置电机</label>
+                            </span>
+                                <span class="form-radio">
+                                <input type="radio" name="yMotorPlace" id="y321-2" title="" value="后置电机" />
+                                <label for="y321-2">后置电机</label>
+                            </span>
+                            </div>
+                            <div class="row">
+                                <span class="name">线轨面到电机座顶边的高度：</span>
+                                <input placeholder="" name="yLineTrackSurfaceToMotorTopHeight" type="text"
+                                       class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="name">电机座宽度：</span>
+                                <input placeholder="" name="yMotorWidth" type="text" class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="lead">线轨的测量：</span>
+                            </div>
+                            <div class="row">
+                                <span class="name">线轨的宽度：</span>
+                                <input placeholder="" name="yLineTrackWidth" type="text" class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="name">线轨的高度：</span>
+                                <input placeholder="" name="yLineTrackHeight" type="text" class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="name">线轨外侧到铸件边的距离：</span>
+                                <input placeholder="" name="yLineTrackOutToCastingDistance" type="text"
+                                       class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="name">线轨内侧到铸件边的距离：</span>
+                                <input placeholder="" name="yLineTrackInToCastingDistance" type="text"
+                                       class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="name">线轨内侧到电机座侧边的距离：</span>
+                                <input placeholder="" name="yLineTrackInToMotorSideDistance" type="text"
+                                       class="form-control-inline" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="title">Y后补充测量</div>
+                        <div class="rows">
+                            <div class="row">
+                                <span class="lead">1.立柱固定面</span>
+                            </div>
+                            <div class="row">
+                                <span class="name">Y后结构：</span>
+                                <span class="form-radio">
+                                <input type="radio" id="yh11-1" name="yHStruct" title="" value="一片式" checked />
+                                <label for="yh11-1">一片式</label>
+                            </span>
+                                <span class="form-radio">
+                                <input type="radio" id="yh11-2" name="yHStruct" title="" value="多片式" />
+                                <label for="yh11-2">多片式</label>
+                            </span>
+                            </div>
+                            <div class="row">
+                                <span class="name">固定面的宽度</span>
+                                <input placeholder="" name="fixedSurfaceWidth" type="text"
+                                       class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="name">固定面顶边到线轨面的高度</span>
+                                <input placeholder="" name="fixedSurfaceTopToTrackHeight" type="text"
+                                       class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="name">底座侧边到立柱内侧边缘的距离</span>
+                                <input placeholder="" name="bottomSideToInBorderDistance" type="text"
+                                       class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="name">底座线轨支座的宽度</span>
+                                <input placeholder="" name="bottomTrackWidth" type="text" class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="name">立柱开裆尺寸</span>
+                                <input placeholder="" name="columnOpenSize" type="text" class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="name">轨道面到开裆顶点高度</span>
+                                <input placeholder="" name="trackToOpenTopHeight" type="text"
+                                       class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="name">开裆顶边长度</span>
+                                <input placeholder="" name="openTopLength" type="text" class="form-control-inline" />
+                                （如果是尖角，长度填写0即可）
+                            </div>
+                            <div class="row">
+                                <span class="lead">2. 线轨的测量</span>
+                            </div>
+                            <div class="row">
+                                <span class="name">线轨的宽度</span>
+                                <input placeholder="" name="yHLineTrackWidth" type="text" class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="name">线轨的高度</span>
+                                <input placeholder="" name="yHLineTrackHeight" type="text"
+                                       class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="name">线轨外侧到铸件边的距离</span>
+                                <input placeholder="" name="yHLineTrackOutToCastingDistance" type="text"
+                                       class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="name">线轨内侧到铸件边的距离</span>
+                                <input placeholder="" name="yHLineTrackInToCastingDistance" type="text"
+                                       class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="name">线轨内侧到电机座侧边的距离</span>
+                                <input placeholder="" name="yHLineTrackInToMotorSideDistance" type="text"
+                                       class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="name">轨道面到立柱最低点的高度</span>
+                                <input placeholder="" name="yHLineTrackSurfaceToBottomHeight" type="text"
+                                       class="form-control-inline" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="title">Z轴测量</div>
+                        <div class="rows">
+                            <div class="row">
+                                <span class="name">有效固定面的宽度</span>
+                                <input placeholder="" name="zValidFixedSurfaceWidth" type="text"
+                                       class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="name">有效固定面的高度</span>
+                                <input placeholder="" name="zValidFixedSurfaceHeight" type="text"
+                                       class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="name">轨道面到固定面的顶端的高度</span>
+                                <input placeholder="" name="trackToFixedTopHeight" type="text"
+                                       class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="name">轨道的内宽</span>
+                                <input placeholder="" name="zInTrackWidth" type="text" class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="name">轨道的外宽</span>
+                                <input placeholder="" name="zOutTrackWidth" type="text" class="form-control-inline" />
+                            </div>
+                            <div class="row"><span class="lead">线轨的测量</span></div>
+
+                            <div class="row">
+                                <span class="name">线轨的宽度</span>
+                                <input placeholder="" name="zLineTrackWidth" type="text" class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="name">线轨的高度</span>
+                                <input placeholder="" name="zLineTrackHeight" type="text" class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="name">线轨外侧到铸件边的距离</span>
+                                <input placeholder="" name="zLineTrackOutToCastingDistance" type="text"
+                                       class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="name">线轨内侧到铸件边的距离</span>
+                                <input placeholder="" name="zLineTrackInToCastingDistance" type="text"
+                                       class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="name">线轨内侧到轴承座侧边的距离</span>
+                                <input placeholder="" name="zLineTrackInToBearingSideDistance" type="text"
+                                       class="form-control-inline" />
+                            </div>
+                            <div class="row">
+                                <span class="name">线轨面到轴承座顶边的高度</span>
+                                <input placeholder="" name="zLineTrackToBearingTopHeight" type="text"
+                                       class="form-control-inline" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="saveBtn">保存</div>
+    </div>
+</div>
+
+<script src="/static/js/jquery.js"></script>
+<script src="/static/js/index.js"></script>
+</body>
+</html>
